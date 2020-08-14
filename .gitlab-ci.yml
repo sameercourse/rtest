@@ -1,0 +1,19 @@
+step1:
+  script: 
+    - echo "hi"
+    - env
+
+  rules:
+   - changes:
+      - "folder/f1"
+ 
+
+
+step2:
+  script: 
+    - echo "hi"
+    - env
+  rules:
+   - changes:
+      - "folder/f2"
+

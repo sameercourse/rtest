@@ -16,4 +16,9 @@ step2:
   only:
    changes:
       - "folder/f2"
+      
+      
+ Test: 
+  script: 
+   - echo "hi there"
 

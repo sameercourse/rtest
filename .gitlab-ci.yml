@@ -1,3 +1,10 @@
+workflow:
+  rules:
+    # make sure there are changes in this pipeline
+    - if: $CI_COMMIT_BEFORE_SHA == '0000000000000000000000000000000000000000' || $CI_COMMIT_BEFORE_SHA == $CI_COMMIT_SHA
+      when: never
+
+
 step1:
   script: 
     - echo "hi"

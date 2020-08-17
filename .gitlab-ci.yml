@@ -1,19 +1,15 @@
-workflow: 
- rules: 
-    - if: $CI_COMMIT_TAG
+workflow:
+   rules:
+    - if: $CI_COMMIT_BEFORE_SHA == '0000000000000000000000000000000000000000'
       when: never
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      when: never
-    - if: $CI_COMMIT_BEFORE_SHA == '0000000000000000000000000000000000000000
-      when: never
-    - when: always
+
+
 
 
 step1:
   script: 
     - echo "hi"
     - env
-
   rules:
     - changes:
         - "folder/f1"
@@ -31,4 +27,3 @@ step2:
         - "folder/f1"
       when: manual
       allow_failure: true
-

@@ -12,18 +12,14 @@ step1:
     - env
   rules:
     - changes:
-        - "folder/f1"
+        - Dockerfile
       when: manual
       allow_failure: true
+      
+ Job1: 
+  script: 
+   - echo "hi"
+   - env
  
 
 
-step2:
-  script: 
-    - echo "hi"
-    - env
-  rules:
-    - changes:
-        - "folder/f1"
-      when: manual
-      allow_failure: true

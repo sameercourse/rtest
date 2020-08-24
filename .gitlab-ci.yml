@@ -9,6 +9,7 @@ workflow:
 step1:
   script: 
     - echo "hi"
+    - echo "hello"
     - env
   rules:
     - changes:

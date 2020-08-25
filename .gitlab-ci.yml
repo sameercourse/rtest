@@ -1,14 +1,22 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH && $CI_COMMIT_BEFORE_SHA != '0000000000000000000000000000000000000000'
+
+
+
+
+
 step1:
   script: 
     - echo "hi"
     - echo "hello"
     - env
-  only:
-    refs:
-      - merge_requests
-    changes:
-      - Dockerfile
-
+  rules:
+    - changes:
+        - Dockerfile
+      when: manual
+      allow_failure: true
+      
 
 job2: 
  script: 
